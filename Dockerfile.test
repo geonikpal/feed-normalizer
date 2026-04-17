@@ -1,0 +1,5 @@
+FROM alpine:3.19
+RUN apk add --no-cache curl bash
+COPY test-endpoints.sh /test-endpoints.sh
+RUN chmod +x /test-endpoints.sh
+CMD ["/test-endpoints.sh"]
