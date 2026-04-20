@@ -1,3 +1,24 @@
 spring:
   application:
     name: feed-normalizer
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    app:
+      name: feed-normalizer
+
+logging:
+  level:
+    com.sporty.feednormalizer: INFO
+  file:
+    name: logs/feed-normalizer.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{HH:mm:ss} %-5level %logger{36} - %msg%n"
